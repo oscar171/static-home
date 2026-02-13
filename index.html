@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community AI — AI-Powered Marketing Platform</title>
+  <meta name="description" content="Manage your social communities, create stunning AI content, optimize ads, and boost SEO — all from one intelligent platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+    .fade-on-scroll { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    .fade-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    /* Gradient orbs for hero */
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35; pointer-events: none; }
+    .dark .orb { opacity: 0.2; }
+
+    /* Feature card hover glow */
+    .feature-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .feature-card:hover { transform: translateY(-4px); }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased overflow-x-hidden">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg border-b border-gray-200/60 dark:border-gray-800/60">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <span class="text-xl font-bold tracking-tight">Community<span class="text-blue-600 dark:text-blue-400">AI</span></span>
+      </a>
+
+      <!-- Nav Links (desktop) -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+        <a href="#features" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="nav.features">Features</a>
+        <a href="#modules" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="nav.modules">Modules</a>
+        <a href="#cta" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="nav.pricing">Pricing</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Language Toggle -->
+        <button id="langToggle" class="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          EN / ES
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="p-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <svg class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </button>
+
+        <!-- CTA Buttons -->
+        <a href="#cta" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all" data-i18n="nav.getStarted">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ========== HERO ========== -->
+  <section class="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-6">
+    <!-- Background Orbs -->
+    <div class="orb w-[500px] h-[500px] bg-blue-500 -top-32 -left-32 animate-pulse-slow"></div>
+    <div class="orb w-[400px] h-[400px] bg-violet-500 top-1/3 -right-24 animate-float"></div>
+    <div class="orb w-[300px] h-[300px] bg-cyan-400 bottom-0 left-1/4 animate-pulse-slow"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center">
+      <!-- Badge -->
+      <div class="animate-fade-in inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-sm font-medium mb-8">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <span data-i18n="hero.badge">AI-Powered Marketing Platform</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="animate-fade-in-up text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+        <span data-i18n="hero.title1">Your Entire Marketing</span><br />
+        <span class="bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent" data-i18n="hero.title2">Powered by AI</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="animate-fade-in-up max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed" data-i18n="hero.subtitle">
+        Manage communities, create stunning content, optimize ad campaigns, and dominate SEO — all from one intelligent platform.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="animate-fade-in-up flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#cta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all">
+          <span data-i18n="hero.ctaPrimary">Start Free Trial</span>
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+        <a href="#modules" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span data-i18n="hero.ctaSecondary">See How It Works</span>
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="animate-fade-in-up mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto">
+        <div class="text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">4</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1" data-i18n="hero.stat1">AI Modules</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">10x</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1" data-i18n="hero.stat2">Faster Workflows</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">24/7</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1" data-i18n="hero.stat3">AI Automation</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">100%</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1" data-i18n="hero.stat4">Data-Driven</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FEATURES OVERVIEW ========== -->
+  <section id="features" class="py-24 px-6 bg-gray-50/50 dark:bg-gray-900/50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 fade-on-scroll">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4" data-i18n="features.title">One Platform, Infinite Possibilities</h2>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400" data-i18n="features.subtitle">Everything your marketing team needs, enhanced with artificial intelligence and unified in a single workspace.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-on-scroll">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 feature-card">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" data-i18n="features.f1.title">Unified Dashboard</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="features.f1.desc">All your marketing channels in one place. No more switching between tools.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 feature-card">
+          <div class="w-12 h-12 rounded-xl bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-violet-600 dark:text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" data-i18n="features.f2.title">AI-Powered Automation</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="features.f2.desc">From content creation to sentiment analysis, AI handles the heavy lifting.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 feature-card">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" data-i18n="features.f3.title">Real-Time Analytics</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="features.f3.desc">Track performance across all channels with actionable insights and reports.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 feature-card">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" data-i18n="features.f4.title">Enterprise Security</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="features.f4.desc">Role-based access, team management, and audit logs for complete control.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 feature-card">
+          <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-900/50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-rose-600 dark:text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" data-i18n="features.f5.title">Multi-Platform</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="features.f5.desc">Instagram, Facebook, WhatsApp, Google — connect all your channels seamlessly.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 feature-card">
+          <div class="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-900/50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cyan-600 dark:text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" data-i18n="features.f6.title">Smart Workflows</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="features.f6.desc">Automate repetitive tasks with intelligent bots and scheduled actions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== MODULES ========== -->
+  <section id="modules" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 fade-on-scroll">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4" data-i18n="modules.title">Four AI Modules, One Platform</h2>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400" data-i18n="modules.subtitle">Each module is specialized for a key area of digital marketing, powered by the latest AI models.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Community AI -->
+        <div class="fade-on-scroll group relative rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-8 overflow-hidden feature-card">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+              <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3" data-i18n="modules.community.title">Community AI</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6" data-i18n="modules.community.desc">Manage social communities at scale with AI-powered sentiment analysis, smart bots, and automated responses.</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.community.f1">Sentiment analysis & smart routing</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.community.f2">AI chatbot with custom configurations</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.community.f3">Multi-platform conversations (IG, FB, WhatsApp)</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.community.f4">Post scheduling & performance analytics</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Creative AI -->
+        <div class="fade-on-scroll group relative rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-8 overflow-hidden feature-card">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-violet-500/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center mb-6 shadow-lg shadow-violet-500/20">
+              <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3" data-i18n="modules.creative.title">Creative AI</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6" data-i18n="modules.creative.desc">Generate stunning images, videos, and audio with cutting-edge AI models. From concept to content in seconds.</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-violet-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.creative.f1">AI image generation & editing (Gemini)</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-violet-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.creative.f2">Video creation (Kling, Google Veo)</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-violet-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.creative.f3">Text-to-Speech with natural voices</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-violet-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.creative.f4">Reels, mockups & strategy templates</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Ads AI -->
+        <div class="fade-on-scroll group relative rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-8 overflow-hidden feature-card">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-amber-500/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mb-6 shadow-lg shadow-amber-500/20">
+              <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3" data-i18n="modules.ads.title">Ads AI</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6" data-i18n="modules.ads.desc">Optimize your paid media strategy with AI-driven planning, real-time metrics, and intelligent budget allocation.</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.ads.f1">Smart paid media planning</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.ads.f2">Real-time campaign performance</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.ads.f3">Google Ads, Meta Ads & TikTok Ads</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.ads.f4">AI creative analysis & alerts</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SEO AI -->
+        <div class="fade-on-scroll group relative rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-8 overflow-hidden feature-card">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/20">
+              <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3" data-i18n="modules.seo.title">SEO AI</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6" data-i18n="modules.seo.desc">Dominate search results with AI-powered keyword analysis, content suggestions, and automated SEO reports.</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.seo.f1">Google Search Console integration</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.seo.f2">Keyword & opportunity analysis</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.seo.f3">Cannibalization detection</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="modules.seo.f4">Automated reports & content suggestions</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== CTA SECTION ========== -->
+  <section id="cta" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto fade-on-scroll">
+      <div class="relative rounded-3xl overflow-hidden">
+        <!-- Background gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent)]"></div>
+
+        <div class="relative px-8 py-16 sm:px-16 sm:py-20 text-center text-white">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6" data-i18n="cta.title">Ready to Transform Your Marketing?</h2>
+          <p class="max-w-xl mx-auto text-lg text-blue-100 mb-10" data-i18n="cta.subtitle">Join the next generation of AI-powered marketing teams. Start your free trial today — no credit card required.</p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl bg-white text-blue-700 shadow-xl hover:bg-blue-50 hover:scale-105 transition-all">
+              <span data-i18n="cta.ctaPrimary">Start Free Trial</span>
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 transition-colors">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              <span data-i18n="cta.ctaSecondary">Talk to Sales</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t border-gray-200 dark:border-gray-800 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <span class="text-lg font-bold tracking-tight">Community<span class="text-blue-600 dark:text-blue-400">AI</span></span>
+        </div>
+
+        <!-- Links -->
+        <div class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+          <a href="#features" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.features">Features</a>
+          <a href="#modules" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.modules">Modules</a>
+          <a href="#cta" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.pricing">Pricing</a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-sm text-gray-400 dark:text-gray-500" data-i18n="footer.copyright">&copy; 2025 Community AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // ==========================
+    // i18n — Language System
+    // ==========================
+    const translations = {
+      en: {
+        'nav.features': 'Features',
+        'nav.modules': 'Modules',
+        'nav.pricing': 'Pricing',
+        'nav.getStarted': 'Get Started',
+        'hero.badge': 'AI-Powered Marketing Platform',
+        'hero.title1': 'Your Entire Marketing',
+        'hero.title2': 'Powered by AI',
+        'hero.subtitle': 'Manage communities, create stunning content, optimize ad campaigns, and dominate SEO — all from one intelligent platform.',
+        'hero.ctaPrimary': 'Start Free Trial',
+        'hero.ctaSecondary': 'See How It Works',
+        'hero.stat1': 'AI Modules',
+        'hero.stat2': 'Faster Workflows',
+        'hero.stat3': 'AI Automation',
+        'hero.stat4': 'Data-Driven',
+        'features.title': 'One Platform, Infinite Possibilities',
+        'features.subtitle': 'Everything your marketing team needs, enhanced with artificial intelligence and unified in a single workspace.',
+        'features.f1.title': 'Unified Dashboard',
+        'features.f1.desc': 'All your marketing channels in one place. No more switching between tools.',
+        'features.f2.title': 'AI-Powered Automation',
+        'features.f2.desc': 'From content creation to sentiment analysis, AI handles the heavy lifting.',
+        'features.f3.title': 'Real-Time Analytics',
+        'features.f3.desc': 'Track performance across all channels with actionable insights and reports.',
+        'features.f4.title': 'Enterprise Security',
+        'features.f4.desc': 'Role-based access, team management, and audit logs for complete control.',
+        'features.f5.title': 'Multi-Platform',
+        'features.f5.desc': 'Instagram, Facebook, WhatsApp, Google — connect all your channels seamlessly.',
+        'features.f6.title': 'Smart Workflows',
+        'features.f6.desc': 'Automate repetitive tasks with intelligent bots and scheduled actions.',
+        'modules.title': 'Four AI Modules, One Platform',
+        'modules.subtitle': 'Each module is specialized for a key area of digital marketing, powered by the latest AI models.',
+        'modules.community.title': 'Community AI',
+        'modules.community.desc': 'Manage social communities at scale with AI-powered sentiment analysis, smart bots, and automated responses.',
+        'modules.community.f1': 'Sentiment analysis & smart routing',
+        'modules.community.f2': 'AI chatbot with custom configurations',
+        'modules.community.f3': 'Multi-platform conversations (IG, FB, WhatsApp)',
+        'modules.community.f4': 'Post scheduling & performance analytics',
+        'modules.creative.title': 'Creative AI',
+        'modules.creative.desc': 'Generate stunning images, videos, and audio with cutting-edge AI models. From concept to content in seconds.',
+        'modules.creative.f1': 'AI image generation & editing (Gemini)',
+        'modules.creative.f2': 'Video creation (Kling, Google Veo)',
+        'modules.creative.f3': 'Text-to-Speech with natural voices',
+        'modules.creative.f4': 'Reels, mockups & strategy templates',
+        'modules.ads.title': 'Ads AI',
+        'modules.ads.desc': 'Optimize your paid media strategy with AI-driven planning, real-time metrics, and intelligent budget allocation.',
+        'modules.ads.f1': 'Smart paid media planning',
+        'modules.ads.f2': 'Real-time campaign performance',
+        'modules.ads.f3': 'Google Ads, Meta Ads & TikTok Ads',
+        'modules.ads.f4': 'AI creative analysis & alerts',
+        'modules.seo.title': 'SEO AI',
+        'modules.seo.desc': 'Dominate search results with AI-powered keyword analysis, content suggestions, and automated SEO reports.',
+        'modules.seo.f1': 'Google Search Console integration',
+        'modules.seo.f2': 'Keyword & opportunity analysis',
+        'modules.seo.f3': 'Cannibalization detection',
+        'modules.seo.f4': 'Automated reports & content suggestions',
+        'cta.title': 'Ready to Transform Your Marketing?',
+        'cta.subtitle': 'Join the next generation of AI-powered marketing teams. Start your free trial today — no credit card required.',
+        'cta.ctaPrimary': 'Start Free Trial',
+        'cta.ctaSecondary': 'Talk to Sales',
+        'footer.features': 'Features',
+        'footer.modules': 'Modules',
+        'footer.pricing': 'Pricing',
+        'footer.copyright': '\u00a9 2025 Community AI. All rights reserved.',
+      },
+      es: {
+        'nav.features': 'Funcionalidades',
+        'nav.modules': 'M\u00f3dulos',
+        'nav.pricing': 'Precios',
+        'nav.getStarted': 'Comenzar',
+        'hero.badge': 'Plataforma de Marketing con IA',
+        'hero.title1': 'Todo tu Marketing',
+        'hero.title2': 'Potenciado por IA',
+        'hero.subtitle': 'Gestiona comunidades, crea contenido impactante, optimiza campa\u00f1as publicitarias y domina el SEO \u2014 todo desde una plataforma inteligente.',
+        'hero.ctaPrimary': 'Prueba Gratuita',
+        'hero.ctaSecondary': 'Ver C\u00f3mo Funciona',
+        'hero.stat1': 'M\u00f3dulos IA',
+        'hero.stat2': 'M\u00e1s R\u00e1pido',
+        'hero.stat3': 'Automatizaci\u00f3n IA',
+        'hero.stat4': 'Basado en Datos',
+        'features.title': 'Una Plataforma, Posibilidades Infinitas',
+        'features.subtitle': 'Todo lo que tu equipo de marketing necesita, potenciado con inteligencia artificial y unificado en un solo espacio de trabajo.',
+        'features.f1.title': 'Dashboard Unificado',
+        'features.f1.desc': 'Todos tus canales de marketing en un solo lugar. Sin cambiar entre herramientas.',
+        'features.f2.title': 'Automatizaci\u00f3n con IA',
+        'features.f2.desc': 'Desde creaci\u00f3n de contenido hasta an\u00e1lisis de sentimiento, la IA hace el trabajo pesado.',
+        'features.f3.title': 'Anal\u00edticas en Tiempo Real',
+        'features.f3.desc': 'Monitorea el rendimiento en todos los canales con insights accionables y reportes.',
+        'features.f4.title': 'Seguridad Empresarial',
+        'features.f4.desc': 'Acceso basado en roles, gesti\u00f3n de equipos y registros de auditor\u00eda para control total.',
+        'features.f5.title': 'Multi-Plataforma',
+        'features.f5.desc': 'Instagram, Facebook, WhatsApp, Google \u2014 conecta todos tus canales sin fricci\u00f3n.',
+        'features.f6.title': 'Flujos Inteligentes',
+        'features.f6.desc': 'Automatiza tareas repetitivas con bots inteligentes y acciones programadas.',
+        'modules.title': 'Cuatro M\u00f3dulos IA, Una Plataforma',
+        'modules.subtitle': 'Cada m\u00f3dulo est\u00e1 especializado en un \u00e1rea clave del marketing digital, potenciado por los \u00faltimos modelos de IA.',
+        'modules.community.title': 'Community AI',
+        'modules.community.desc': 'Gestiona comunidades sociales a escala con an\u00e1lisis de sentimiento, bots inteligentes y respuestas autom\u00e1ticas.',
+        'modules.community.f1': 'An\u00e1lisis de sentimiento y enrutamiento inteligente',
+        'modules.community.f2': 'Chatbot IA con configuraciones personalizadas',
+        'modules.community.f3': 'Conversaciones multi-plataforma (IG, FB, WhatsApp)',
+        'modules.community.f4': 'Programaci\u00f3n de posts y anal\u00edticas de rendimiento',
+        'modules.creative.title': 'Creative AI',
+        'modules.creative.desc': 'Genera im\u00e1genes, videos y audio impactantes con modelos de IA de \u00faltima generaci\u00f3n. Del concepto al contenido en segundos.',
+        'modules.creative.f1': 'Generaci\u00f3n y edici\u00f3n de im\u00e1genes con IA (Gemini)',
+        'modules.creative.f2': 'Creaci\u00f3n de video (Kling, Google Veo)',
+        'modules.creative.f3': 'Texto a voz con voces naturales',
+        'modules.creative.f4': 'Reels, mockups y plantillas de estrategia',
+        'modules.ads.title': 'Ads AI',
+        'modules.ads.desc': 'Optimiza tu estrategia de medios pagados con planificaci\u00f3n impulsada por IA, m\u00e9tricas en tiempo real y asignaci\u00f3n inteligente de presupuesto.',
+        'modules.ads.f1': 'Planificaci\u00f3n inteligente de medios pagados',
+        'modules.ads.f2': 'Rendimiento de campa\u00f1as en tiempo real',
+        'modules.ads.f3': 'Google Ads, Meta Ads y TikTok Ads',
+        'modules.ads.f4': 'An\u00e1lisis creativo con IA y alertas',
+        'modules.seo.title': 'SEO AI',
+        'modules.seo.desc': 'Domina los resultados de b\u00fasqueda con an\u00e1lisis de keywords, sugerencias de contenido y reportes SEO automatizados.',
+        'modules.seo.f1': 'Integraci\u00f3n con Google Search Console',
+        'modules.seo.f2': 'An\u00e1lisis de keywords y oportunidades',
+        'modules.seo.f3': 'Detecci\u00f3n de canibalizaci\u00f3n',
+        'modules.seo.f4': 'Reportes automatizados y sugerencias de contenido',
+        'cta.title': '\u00bfListo para Transformar tu Marketing?',
+        'cta.subtitle': '\u00danete a la nueva generaci\u00f3n de equipos de marketing potenciados por IA. Comienza tu prueba gratuita hoy \u2014 sin tarjeta de cr\u00e9dito.',
+        'cta.ctaPrimary': 'Prueba Gratuita',
+        'cta.ctaSecondary': 'Hablar con Ventas',
+        'footer.features': 'Funcionalidades',
+        'footer.modules': 'M\u00f3dulos',
+        'footer.pricing': 'Precios',
+        'footer.copyright': '\u00a9 2025 Community AI. Todos los derechos reservados.',
+      },
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      document.getElementById('langToggle').textContent = lang === 'en' ? 'ES' : 'EN';
+    }
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+      setLang(currentLang === 'en' ? 'es' : 'en');
+    });
+
+    // ==========================
+    // Dark Mode
+    // ==========================
+    function setTheme(dark) {
+      document.documentElement.classList.toggle('dark', dark);
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    }
+
+    const prefersDark = localStorage.getItem('theme') === 'dark' ||
+      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setTheme(prefersDark);
+
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      setTheme(!document.documentElement.classList.contains('dark'));
+    });
+
+    // ==========================
+    // Scroll Animations
+    // ==========================
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+
+    // ==========================
+    // Init language
+    // ==========================
+    setLang(currentLang);
+  </script>
+
+</body>
+</html>
