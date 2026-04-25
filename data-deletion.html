@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Deletion Request — SynapticSpark</title>
+  <meta name="description" content="Request deletion of your personal data from SynapticSpark." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }
+  </script>
+  <style>
+    .legal h2 { font-size: 1.5rem; line-height: 2rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1rem; color: #111827; }
+    .legal h3 { font-size: 1.125rem; line-height: 1.75rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: #111827; }
+    .legal p, .legal li { color: #4b5563; line-height: 1.75; }
+    .legal p { margin-bottom: 1rem; }
+    .legal ul, .legal ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .legal ul { list-style-type: disc; }
+    .legal ol { list-style-type: decimal; }
+    .legal li { margin-bottom: 0.5rem; }
+    .legal a { color: #2563eb; text-decoration: none; }
+    .legal a:hover { text-decoration: underline; }
+    .dark .legal h2, .dark .legal h3 { color: #ffffff; }
+    .dark .legal p, .dark .legal li { color: #9ca3af; }
+    .dark .legal a { color: #60a5fa; }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased">
+
+  <nav class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg border-b border-gray-200/60 dark:border-gray-800/60">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <img src="images/logo.png" alt="SynapticSpark" class="w-9 h-9" />
+        <span class="text-xl font-bold tracking-tight">Synaptic<span class="text-blue-600 dark:text-blue-400">Spark</span></span>
+      </a>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">EN / ES</button>
+        <button id="themeToggle" class="p-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <svg class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </button>
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg" data-i18n="nav.back">Back to Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-32 pb-12 px-6 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-3" data-i18n="legal.label">Legal</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" data-i18n="dataDel.title">Data Deletion Request</h1>
+      <p class="text-gray-500 dark:text-gray-400" data-i18n="dataDel.updated">Last updated: April 25, 2026</p>
+    </div>
+  </section>
+
+  <main class="py-16 px-6">
+    <div class="max-w-4xl mx-auto legal">
+
+      <p data-i18n="dataDel.intro">SynapticSpark respects your right to control your personal data. This page explains how you can request deletion of the personal data we hold about you, including data obtained through integrations such as Shopify, Google, Meta, Instagram, Facebook, and other connected platforms.</p>
+
+      <h2 data-i18n="dataDel.s1.title">1. What gets deleted</h2>
+      <ul>
+        <li data-i18n="dataDel.s1.l1">Your account profile (name, email, phone, company).</li>
+        <li data-i18n="dataDel.s1.l2">Content you created or uploaded (posts, prompts, generated assets, configurations).</li>
+        <li data-i18n="dataDel.s1.l3">OAuth tokens and credentials for connected platforms (Shopify, Google, Meta, etc.).</li>
+        <li data-i18n="dataDel.s1.l4">Synced data from connected platforms (keywords, blog metadata, campaign metrics).</li>
+        <li data-i18n="dataDel.s1.l5">Usage logs associated with your account.</li>
+      </ul>
+
+      <h2 data-i18n="dataDel.s2.title">2. Self-service deletion</h2>
+      <p data-i18n="dataDel.s2.body">If you have an active account, you can delete it from inside the app:</p>
+      <ol>
+        <li data-i18n="dataDel.s2.l1">Sign in at <a href="https://app.synapticsparkai.com">app.synapticsparkai.com</a>.</li>
+        <li data-i18n="dataDel.s2.l2">Go to Settings &rarr; Account &rarr; Delete account.</li>
+        <li data-i18n="dataDel.s2.l3">Confirm the deletion. Your data is queued for permanent removal.</li>
+      </ol>
+
+      <h2 data-i18n="dataDel.s3.title">3. Email request</h2>
+      <p data-i18n="dataDel.s3.body">If you cannot access your account, send an email to <a href="mailto:info@synapticsparkai.com">info@synapticsparkai.com</a> from the email address associated with the account, including:</p>
+      <ul>
+        <li data-i18n="dataDel.s3.l1">The subject line: "Data Deletion Request".</li>
+        <li data-i18n="dataDel.s3.l2">Your full name and registered email address.</li>
+        <li data-i18n="dataDel.s3.l3">The connected platforms involved (e.g. Shopify store domain) if applicable.</li>
+      </ul>
+      <p data-i18n="dataDel.s3.verify">We may ask for additional information to verify your identity before processing the request.</p>
+
+      <h2 data-i18n="dataDel.s4.title">4. Shopify merchants and customers</h2>
+      <p data-i18n="dataDel.s4.body">If you uninstall the SynapticSpark app from your Shopify store, we automatically receive an uninstall webhook and remove your store data within 30 days, in accordance with Shopify's GDPR mandatory webhooks (customers/redact, customers/data_request, shop/redact). For ad-hoc requests outside of uninstall, contact us at the email above.</p>
+
+      <h2 data-i18n="dataDel.s5.title">5. Timeline</h2>
+      <p data-i18n="dataDel.s5.body">We process verified deletion requests within 30 days. Some data may persist in encrypted backups for a limited rolling window (typically up to 90 days) before being overwritten. Anonymized or aggregated data that cannot be linked back to you may be retained indefinitely.</p>
+
+      <h2 data-i18n="dataDel.s6.title">6. Exceptions</h2>
+      <p data-i18n="dataDel.s6.body">We may retain certain data when required by law or for legitimate business reasons, including: (i) tax, accounting and legal obligations; (ii) fraud prevention and security; (iii) enforcing our agreements; (iv) defending legal claims.</p>
+
+      <h2 data-i18n="dataDel.s7.title">7. Contact</h2>
+      <p data-i18n="dataDel.s7.body">For any privacy or data deletion question, contact <a href="mailto:info@synapticsparkai.com">info@synapticsparkai.com</a>.</p>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-200 dark:border-gray-800 py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2.5">
+        <img src="images/logo.png" alt="SynapticSpark" class="w-8 h-8" />
+        <span class="text-lg font-bold tracking-tight">Synaptic<span class="text-blue-600 dark:text-blue-400">Spark</span></span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+        <a href="privacy.html" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.terms">Terms</a>
+        <a href="cookies.html" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.cookies">Cookies</a>
+        <a href="data-deletion.html" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.dataDeletion">Data Deletion</a>
+      </div>
+      <p class="text-sm text-gray-400 dark:text-gray-500" data-i18n="footer.copyright">&copy; 2026 SynapticSpark. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/legal.js"></script>
+</body>
+</html>
