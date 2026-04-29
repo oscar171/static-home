@@ -58,8 +58,9 @@
       <!-- Nav Links (desktop) -->
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
         <a href="#features" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="nav.features">Features</a>
+        <a href="#how-it-works" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="nav.howItWorks">How it works</a>
         <a href="#modules" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="nav.modules">Modules</a>
-        <a href="#cta" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="nav.pricing">Pricing</a>
+        <a href="contact.html" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="nav.contact">Contact</a>
       </div>
 
       <!-- Actions -->
@@ -75,9 +76,14 @@
           <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
         </button>
 
-        <!-- CTA Buttons -->
-        <a href="#cta" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all" data-i18n="nav.getStarted">
-          Get Started
+        <!-- Sign In Button -->
+        <a href="https://app.synapticsparkai.com/login" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" data-i18n="nav.signIn">
+          Sign In
+        </a>
+
+        <!-- Request Demo CTA -->
+        <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all" data-i18n="nav.requestDemo">
+          Request a Demo
         </a>
       </div>
     </div>
@@ -111,11 +117,11 @@
 
       <!-- CTA Buttons -->
       <div class="animate-fade-in-up flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#cta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all">
-          <span data-i18n="hero.ctaPrimary">Start Free Trial</span>
+        <a href="contact.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all">
+          <span data-i18n="hero.ctaPrimary">Request a Demo</span>
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
-        <a href="#modules" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+        <a href="#how-it-works" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           <span data-i18n="hero.ctaSecondary">See How It Works</span>
         </a>
@@ -200,6 +206,78 @@
           </div>
           <h3 class="text-lg font-bold mb-2" data-i18n="features.f6.title">Smart Workflows</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="features.f6.desc">Automate repetitive tasks with intelligent bots and scheduled actions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section id="how-it-works" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 fade-on-scroll">
+        <p class="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-3 uppercase tracking-wider" data-i18n="how.label">For agencies & businesses</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4" data-i18n="how.title">How SynapticSpark works</h2>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400" data-i18n="how.subtitle">Connect the social channels you already manage and let AI help you scale community management, content, and reporting — without changing platforms.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-on-scroll">
+        <!-- Step 1 -->
+        <div class="relative p-8 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 feature-card">
+          <div class="absolute -top-4 left-8 w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-violet-600 text-white font-bold flex items-center justify-center shadow-lg shadow-blue-500/30">1</div>
+          <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center mb-4 mt-2">
+            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" data-i18n="how.s1.title">Connect your accounts</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-i18n="how.s1.desc">Securely link the Facebook Pages and Instagram Business accounts you (or your clients) already manage. We use the official Meta APIs and OAuth — you stay in control of every permission.</p>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span data-i18n="how.s1.b1">Facebook Pages</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span data-i18n="how.s1.b2">Instagram Business accounts</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span data-i18n="how.s1.b3">WhatsApp Business</span></li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative p-8 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 feature-card">
+          <div class="absolute -top-4 left-8 w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 to-pink-500 text-white font-bold flex items-center justify-center shadow-lg shadow-violet-500/30">2</div>
+          <div class="w-12 h-12 rounded-xl bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center mb-4 mt-2">
+            <svg class="w-6 h-6 text-violet-600 dark:text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" data-i18n="how.s2.title">AI handles the heavy lifting</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-i18n="how.s2.desc">Our AI agents read incoming messages and comments, classify sentiment, suggest replies, and help you publish optimized content across every connected channel.</p>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-violet-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span data-i18n="how.s2.b1">Unified inbox for messages & comments</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-violet-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span data-i18n="how.s2.b2">AI sentiment analysis & smart routing</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-violet-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span data-i18n="how.s2.b3">Content scheduling & publishing</span></li>
+          </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative p-8 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 feature-card">
+          <div class="absolute -top-4 left-8 w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white font-bold flex items-center justify-center shadow-lg shadow-emerald-500/30">3</div>
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center mb-4 mt-2">
+            <svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" data-i18n="how.s3.title">Measure & report from one dashboard</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-i18n="how.s3.desc">Track engagement, reach and response times across all your accounts in real time, and export branded reports for your stakeholders or clients.</p>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span data-i18n="how.s3.b1">Cross-channel performance metrics</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span data-i18n="how.s3.b2">Branded client reports</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span data-i18n="how.s3.b3">Role-based access for teams</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Trust badge -->
+      <div class="mt-16 max-w-3xl mx-auto text-center fade-on-scroll">
+        <div class="inline-flex items-start gap-4 p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-left">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold mb-1" data-i18n="how.trust.title">Built on the official Meta Platforms APIs</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="how.trust.desc">SynapticSpark uses Meta's Graph API and Instagram Graph API in compliance with the Meta Platform Terms. Your customers' tokens are encrypted at rest, never sold, and never used to train AI models.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -351,16 +429,16 @@
 
         <div class="relative px-8 py-16 sm:px-16 sm:py-20 text-center text-white">
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6" data-i18n="cta.title">Ready to Transform Your Marketing?</h2>
-          <p class="max-w-xl mx-auto text-lg text-blue-100 mb-10" data-i18n="cta.subtitle">Join the next generation of AI-powered marketing teams. Start your free trial today — no credit card required.</p>
+          <p class="max-w-xl mx-auto text-lg text-blue-100 mb-10" data-i18n="cta.subtitle">SynapticSpark is currently onboarding agencies and businesses by invitation. Tell us about your team and we'll set you up with a personalized demo.</p>
 
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl bg-white text-blue-700 shadow-xl hover:bg-blue-50 hover:scale-105 transition-all">
-              <span data-i18n="cta.ctaPrimary">Start Free Trial</span>
+            <a href="contact.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl bg-white text-blue-700 shadow-xl hover:bg-blue-50 hover:scale-105 transition-all">
+              <span data-i18n="cta.ctaPrimary">Request a Demo</span>
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
             </a>
-            <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 transition-colors">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-              <span data-i18n="cta.ctaSecondary">Talk to Sales</span>
+            <a href="mailto:info@synapticsparkai.com" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 transition-colors">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span data-i18n="cta.ctaSecondary">Email Sales</span>
             </a>
           </div>
         </div>
@@ -371,27 +449,54 @@
 
   <!-- ========== FOOTER ========== -->
   <footer class="border-t border-gray-200 dark:border-gray-800 py-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <!-- Logo -->
-        <div class="flex items-center gap-2.5">
-          <img src="images/logo.png" alt="SynapticSpark" class="w-8 h-8" />
-          <span class="text-lg font-bold tracking-tight">Synaptic<span class="text-blue-600 dark:text-blue-400">Spark</span></span>
+    <div class="max-w-7xl mx-auto space-y-10">
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand + contact -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <img src="images/logo.png" alt="SynapticSpark" class="w-8 h-8" />
+            <span class="text-lg font-bold tracking-tight">Synaptic<span class="text-blue-600 dark:text-blue-400">Spark</span></span>
+          </div>
+          <p class="text-sm text-gray-500 dark:text-gray-400 max-w-md" data-i18n="footer.tagline">AI-powered marketing platform for agencies and businesses managing communities, content, ads and SEO at scale.</p>
+          <div class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+            <p>
+              <span data-i18n="footer.contactLabel">Contact:</span>
+              <a href="mailto:info@synapticsparkai.com" class="hover:text-gray-900 dark:hover:text-white">info@synapticsparkai.com</a>
+            </p>
+            <p>
+              <span data-i18n="footer.salesLabel">Sales & demos:</span>
+              <a href="contact.html" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.requestDemo">Request a demo</a>
+            </p>
+          </div>
         </div>
 
-        <!-- Links -->
-        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
-          <a href="#features" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.features">Features</a>
-          <a href="#modules" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.modules">Modules</a>
-          <a href="#cta" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.pricing">Pricing</a>
-          <a href="privacy.html" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.privacy">Privacy</a>
-          <a href="terms.html" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.terms">Terms</a>
-          <a href="cookies.html" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.cookies">Cookies</a>
-          <a href="data-deletion.html" class="hover:text-gray-900 dark:hover:text-white transition-colors" data-i18n="footer.dataDeletion">Data Deletion</a>
+        <!-- Product -->
+        <div>
+          <h4 class="text-sm font-bold mb-3" data-i18n="footer.col.product">Product</h4>
+          <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+            <li><a href="#features" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.features">Features</a></li>
+            <li><a href="#how-it-works" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.howItWorks">How it works</a></li>
+            <li><a href="#modules" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.modules">Modules</a></li>
+            <li><a href="https://app.synapticsparkai.com/login" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.signIn">Sign In</a></li>
+          </ul>
         </div>
 
-        <!-- Copyright -->
-        <p class="text-sm text-gray-400 dark:text-gray-500" data-i18n="footer.copyright">&copy; 2026 SynapticSpark. All rights reserved.</p>
+        <!-- Legal -->
+        <div>
+          <h4 class="text-sm font-bold mb-3" data-i18n="footer.col.legal">Legal</h4>
+          <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+            <li><a href="privacy.html" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.privacy">Privacy</a></li>
+            <li><a href="terms.html" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.terms">Terms</a></li>
+            <li><a href="cookies.html" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.cookies">Cookies</a></li>
+            <li><a href="data-deletion.html" class="hover:text-gray-900 dark:hover:text-white" data-i18n="footer.dataDeletion">Data Deletion</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400 dark:text-gray-500" data-i18n="footer.copyright">&copy; 2026 SynapticSpark AI. All rights reserved.</p>
+        <p class="text-xs text-gray-400 dark:text-gray-500" data-i18n="footer.disclaimer">SynapticSpark is an independent platform and is not affiliated with or endorsed by Meta Platforms, Inc.</p>
       </div>
     </div>
   </footer>
@@ -405,14 +510,16 @@
     const translations = {
       en: {
         'nav.features': 'Features',
+        'nav.howItWorks': 'How it works',
         'nav.modules': 'Modules',
-        'nav.pricing': 'Pricing',
-        'nav.getStarted': 'Get Started',
+        'nav.contact': 'Contact',
+        'nav.signIn': 'Sign In',
+        'nav.requestDemo': 'Request a Demo',
         'hero.badge': 'AI-Powered Marketing Platform',
         'hero.title1': 'Your Entire Marketing',
         'hero.title2': 'Powered by AI',
         'hero.subtitle': 'Manage communities, create stunning content, optimize ad campaigns, and dominate SEO — all from one intelligent platform.',
-        'hero.ctaPrimary': 'Start Free Trial',
+        'hero.ctaPrimary': 'Request a Demo',
         'hero.ctaSecondary': 'See How It Works',
         'hero.stat1': 'AI Modules',
         'hero.stat2': 'Faster Workflows',
@@ -432,6 +539,26 @@
         'features.f5.desc': 'Instagram, Facebook, WhatsApp, Google — connect all your channels seamlessly.',
         'features.f6.title': 'Smart Workflows',
         'features.f6.desc': 'Automate repetitive tasks with intelligent bots and scheduled actions.',
+        'how.label': 'For agencies & businesses',
+        'how.title': 'How SynapticSpark works',
+        'how.subtitle': 'Connect the social channels you already manage and let AI help you scale community management, content, and reporting — without changing platforms.',
+        'how.s1.title': 'Connect your accounts',
+        'how.s1.desc': 'Securely link the Facebook Pages and Instagram Business accounts you (or your clients) already manage. We use the official Meta APIs and OAuth — you stay in control of every permission.',
+        'how.s1.b1': 'Facebook Pages',
+        'how.s1.b2': 'Instagram Business accounts',
+        'how.s1.b3': 'WhatsApp Business',
+        'how.s2.title': 'AI handles the heavy lifting',
+        'how.s2.desc': 'Our AI agents read incoming messages and comments, classify sentiment, suggest replies, and help you publish optimized content across every connected channel.',
+        'how.s2.b1': 'Unified inbox for messages & comments',
+        'how.s2.b2': 'AI sentiment analysis & smart routing',
+        'how.s2.b3': 'Content scheduling & publishing',
+        'how.s3.title': 'Measure & report from one dashboard',
+        'how.s3.desc': 'Track engagement, reach and response times across all your accounts in real time, and export branded reports for your stakeholders or clients.',
+        'how.s3.b1': 'Cross-channel performance metrics',
+        'how.s3.b2': 'Branded client reports',
+        'how.s3.b3': 'Role-based access for teams',
+        'how.trust.title': 'Built on the official Meta Platforms APIs',
+        'how.trust.desc': "SynapticSpark uses Meta's Graph API and Instagram Graph API in compliance with the Meta Platform Terms. Your customers' tokens are encrypted at rest, never sold, and never used to train AI models.",
         'modules.title': 'Four AI Modules, One Platform',
         'modules.subtitle': 'Each module is specialized for a key area of digital marketing, powered by the latest AI models.',
         'modules.community.title': 'Community AI',
@@ -459,28 +586,38 @@
         'modules.seo.f3': 'Cannibalization detection',
         'modules.seo.f4': 'Automated reports & content suggestions',
         'cta.title': 'Ready to Transform Your Marketing?',
-        'cta.subtitle': 'Join the next generation of AI-powered marketing teams. Start your free trial today — no credit card required.',
-        'cta.ctaPrimary': 'Start Free Trial',
-        'cta.ctaSecondary': 'Talk to Sales',
+        'cta.subtitle': "SynapticSpark is currently onboarding agencies and businesses by invitation. Tell us about your team and we'll set you up with a personalized demo.",
+        'cta.ctaPrimary': 'Request a Demo',
+        'cta.ctaSecondary': 'Email Sales',
+        'footer.tagline': 'AI-powered marketing platform for agencies and businesses managing communities, content, ads and SEO at scale.',
+        'footer.contactLabel': 'Contact:',
+        'footer.salesLabel': 'Sales & demos:',
+        'footer.requestDemo': 'Request a demo',
+        'footer.col.product': 'Product',
+        'footer.col.legal': 'Legal',
         'footer.features': 'Features',
+        'footer.howItWorks': 'How it works',
         'footer.modules': 'Modules',
-        'footer.pricing': 'Pricing',
+        'footer.signIn': 'Sign In',
         'footer.privacy': 'Privacy',
         'footer.terms': 'Terms',
         'footer.cookies': 'Cookies',
         'footer.dataDeletion': 'Data Deletion',
-        'footer.copyright': '\u00a9 2026 SynapticSpark. All rights reserved.',
+        'footer.disclaimer': 'SynapticSpark is an independent platform and is not affiliated with or endorsed by Meta Platforms, Inc.',
+        'footer.copyright': '\u00a9 2026 SynapticSpark AI. All rights reserved.',
       },
       es: {
         'nav.features': 'Funcionalidades',
+        'nav.howItWorks': 'C\u00f3mo funciona',
         'nav.modules': 'M\u00f3dulos',
-        'nav.pricing': 'Precios',
-        'nav.getStarted': 'Comenzar',
+        'nav.contact': 'Contacto',
+        'nav.signIn': 'Iniciar sesi\u00f3n',
+        'nav.requestDemo': 'Solicitar demo',
         'hero.badge': 'Plataforma de Marketing con IA',
         'hero.title1': 'Todo tu Marketing',
         'hero.title2': 'Potenciado por IA',
         'hero.subtitle': 'Gestiona comunidades, crea contenido impactante, optimiza campa\u00f1as publicitarias y domina el SEO \u2014 todo desde una plataforma inteligente.',
-        'hero.ctaPrimary': 'Prueba Gratuita',
+        'hero.ctaPrimary': 'Solicitar Demo',
         'hero.ctaSecondary': 'Ver C\u00f3mo Funciona',
         'hero.stat1': 'M\u00f3dulos IA',
         'hero.stat2': 'M\u00e1s R\u00e1pido',
@@ -500,6 +637,26 @@
         'features.f5.desc': 'Instagram, Facebook, WhatsApp, Google \u2014 conecta todos tus canales sin fricci\u00f3n.',
         'features.f6.title': 'Flujos Inteligentes',
         'features.f6.desc': 'Automatiza tareas repetitivas con bots inteligentes y acciones programadas.',
+        'how.label': 'Para agencias y negocios',
+        'how.title': 'C\u00f3mo funciona SynapticSpark',
+        'how.subtitle': 'Conecta los canales sociales que ya gestionas y deja que la IA te ayude a escalar la atenci\u00f3n de comunidad, los contenidos y los reportes \u2014 sin cambiar de plataforma.',
+        'how.s1.title': 'Conecta tus cuentas',
+        'how.s1.desc': 'Vincula de forma segura las p\u00e1ginas de Facebook y cuentas profesionales de Instagram que t\u00fa (o tus clientes) ya gestionan. Usamos las APIs oficiales de Meta y OAuth \u2014 t\u00fa mantienes el control de cada permiso.',
+        'how.s1.b1': 'P\u00e1ginas de Facebook',
+        'how.s1.b2': 'Cuentas de Instagram Business',
+        'how.s1.b3': 'WhatsApp Business',
+        'how.s2.title': 'La IA hace el trabajo pesado',
+        'how.s2.desc': 'Nuestros agentes de IA leen mensajes y comentarios entrantes, clasifican el sentimiento, sugieren respuestas y te ayudan a publicar contenido optimizado en cada canal conectado.',
+        'how.s2.b1': 'Bandeja unificada de mensajes y comentarios',
+        'how.s2.b2': 'An\u00e1lisis de sentimiento y enrutamiento inteligente',
+        'how.s2.b3': 'Programaci\u00f3n y publicaci\u00f3n de contenido',
+        'how.s3.title': 'Mide y reporta desde un solo dashboard',
+        'how.s3.desc': 'Monitorea engagement, alcance y tiempos de respuesta de todas tus cuentas en tiempo real, y exporta reportes con tu marca para tus stakeholders o clientes.',
+        'how.s3.b1': 'M\u00e9tricas de rendimiento multicanal',
+        'how.s3.b2': 'Reportes de cliente con tu marca',
+        'how.s3.b3': 'Acceso por roles para equipos',
+        'how.trust.title': 'Construido sobre las APIs oficiales de Meta Platforms',
+        'how.trust.desc': 'SynapticSpark usa la Graph API de Meta y la Instagram Graph API en cumplimiento con los T\u00e9rminos de la Plataforma de Meta. Los tokens de tus clientes se almacenan cifrados, nunca se venden y nunca se usan para entrenar modelos de IA.',
         'modules.title': 'Cuatro M\u00f3dulos IA, Una Plataforma',
         'modules.subtitle': 'Cada m\u00f3dulo est\u00e1 especializado en un \u00e1rea clave del marketing digital, potenciado por los \u00faltimos modelos de IA.',
         'modules.community.title': 'Community AI',
@@ -527,17 +684,25 @@
         'modules.seo.f3': 'Detecci\u00f3n de canibalizaci\u00f3n',
         'modules.seo.f4': 'Reportes automatizados y sugerencias de contenido',
         'cta.title': '\u00bfListo para Transformar tu Marketing?',
-        'cta.subtitle': '\u00danete a la nueva generaci\u00f3n de equipos de marketing potenciados por IA. Comienza tu prueba gratuita hoy \u2014 sin tarjeta de cr\u00e9dito.',
-        'cta.ctaPrimary': 'Prueba Gratuita',
-        'cta.ctaSecondary': 'Hablar con Ventas',
+        'cta.subtitle': 'SynapticSpark est\u00e1 incorporando agencias y negocios por invitaci\u00f3n. Cu\u00e9ntanos sobre tu equipo y te coordinamos una demo personalizada.',
+        'cta.ctaPrimary': 'Solicitar Demo',
+        'cta.ctaSecondary': 'Escribir a Ventas',
+        'footer.tagline': 'Plataforma de marketing con IA para agencias y negocios que gestionan comunidad, contenido, ads y SEO a escala.',
+        'footer.contactLabel': 'Contacto:',
+        'footer.salesLabel': 'Ventas y demos:',
+        'footer.requestDemo': 'Solicitar demo',
+        'footer.col.product': 'Producto',
+        'footer.col.legal': 'Legal',
         'footer.features': 'Funcionalidades',
+        'footer.howItWorks': 'C\u00f3mo funciona',
         'footer.modules': 'M\u00f3dulos',
-        'footer.pricing': 'Precios',
+        'footer.signIn': 'Iniciar sesi\u00f3n',
         'footer.privacy': 'Privacidad',
         'footer.terms': 'T\u00e9rminos',
         'footer.cookies': 'Cookies',
         'footer.dataDeletion': 'Eliminaci\u00f3n de Datos',
-        'footer.copyright': '\u00a9 2026 SynapticSpark. Todos los derechos reservados.',
+        'footer.copyright': '\u00a9 2026 SynapticSpark AI. Todos los derechos reservados.',
+        'footer.disclaimer': 'SynapticSpark es una plataforma independiente y no est\u00e1 afiliada ni respaldada por Meta Platforms, Inc.',
       },
     };
 
