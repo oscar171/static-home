@@ -1,0 +1,9 @@
+# Credenciales y scripts generadores (no publicar)
+.env
+.env.*
+scripts/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.log
